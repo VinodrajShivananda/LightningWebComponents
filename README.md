@@ -1,4 +1,4 @@
-# Accenture Salesforce Lightning Web Components Assessment
+# Salesforce Lightning Web Components Assessment
 ### Choosing a Data Model
 There are 2 primary objects created- Checklist and Checklist Items. 
 Details of Checklist Object
