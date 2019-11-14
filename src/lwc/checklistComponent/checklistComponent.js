@@ -2,7 +2,7 @@ import { LightningElement, api, track } from 'lwc';
 import { ShowToastEvent } from 'lightning/platformShowToastEvent';
 
 import CHECKLIST_OBJECT from '@salesforce/schema/Checklist__c';
-export default class RecordFormCreateExample extends LightningElement {
+export default class checklistComponent extends LightningElement {
     // objectApiName is "Checklist__c"
     @api objectApiName;
     objectApiName = CHECKLIST_OBJECT;
