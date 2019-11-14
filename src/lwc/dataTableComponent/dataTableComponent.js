@@ -31,7 +31,7 @@ const columns = [
     }
 ];
 
-export default class DisplayRecordsLWC extends LightningElement { 
+export default class dataTableComponent extends LightningElement { 
     // reactive variable
     @track data;
     @track columns = columns;
