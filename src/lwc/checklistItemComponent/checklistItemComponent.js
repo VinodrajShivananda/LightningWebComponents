@@ -4,7 +4,7 @@ import { CurrentPageReference } from 'lightning/navigation'
 import { ShowToastEvent } from 'lightning/platformShowToastEvent';
 import CHECKLISTITEM_OBJECT from '@salesforce/schema/Checklist_Item__c';
 //import getChecklistRecords from '@salesforce/apex/ChecklistCOntroller.getChecklistRecords';
-export default class RecordFormCreateExample extends LightningElement {
+export default class checklistItemComponent extends LightningElement {
     // objectApiName is "Account" when this component is placed on an account record page
     @api objectApiName;
     objectApiName = CHECKLISTITEM_OBJECT;
