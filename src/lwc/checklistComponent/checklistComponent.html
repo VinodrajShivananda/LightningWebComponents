@@ -1,0 +1,82 @@
+<template>
+    <lightning-button 
+        label="New Checklist" 
+        variant="brand" 
+        onclick={openModal}
+        class="slds-m-right_small">
+    </lightning-button>
+    <!-- Modal Body-->
+    <template if:true={isModalOpen}>
+            <div class="demo-only" 
+                    style="height: 640px;">
+                <section 
+                    role="dialog" 
+                    tabindex="-1" 
+                    aria-labelledby="modal-heading-01" 
+                    aria-modal="true" 
+                    aria-describedby="modal-content-id-1" 
+                    class="slds-modal slds-fade-in-open"
+                >
+                    <div class="slds-modal__container">
+                        <header class="slds-modal__header">
+                            <button 
+                                class="slds-button slds-button_icon slds-modal__close slds-button_icon-inverse" 
+                                title="Close" 
+                                onclick={closeModal}
+                            >
+                                <lightning-icon 
+                                    icon-name="utility:close" 
+                                    size="medium" 
+                                    class="icn">
+                                </lightning-icon>
+                                <span class="slds-assistive-text">Close</span>
+                            </button>
+                            <h2 id="modal-heading-01" class="slds-text-heading_medium slds-hyphenate">
+                                New Checklist
+                            </h2>
+                        </header>
+                        <div class="slds-modal__content slds-p-around_medium" 
+                            id="modal-content-id-1"
+                        >
+                            <lightning-record-edit-form
+                                object-api-name={objectApiName}
+                                onsuccess={handleSuccess}
+                                onerror={handleError}
+                                oncancel={oncancel}
+                                record-id={recordId}
+                                class="lightningEditRecordForm"
+                            >
+                                <lightning-input-field 
+                                    field-name="Name" 
+                                    required 
+                                    class="slds-m-bottom_x-small ">
+                                </lightning-input-field>
+                                <lightning-input-field 
+                                    field-name="Type__c" 
+                                    required 
+                                    class="slds-m-bottom_x-small ">
+                                </lightning-input-field>
+                                <div class="slds-align_absolute-center">
+                                    <lightning-button
+                                        variant="brand"
+                                        type="submit"
+                                        name="update"
+                                        label="Save"
+                                        class="slds-m-right_small">
+                                    </lightning-button>
+                                    <lightning-button variant="neutral"
+                                        label="Cancel"
+                                        title="Cancel"
+                                        type="text"
+                                        onclick={handleCancel}
+                                        class="slds-m-right_small">
+                                    </lightning-button>
+                                </div> 
+                            </lightning-record-edit-form>
+                        </div>
+                    </div>
+                </section>
+                <div class="slds-backdrop slds-backdrop_open"></div>
+            </div>
+    </template>
+</template>
